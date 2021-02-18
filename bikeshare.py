@@ -28,7 +28,7 @@ def get_filters():
       
     #  getting user input for month (all, january, february, ... , june)
     while True:
-        month=input("choose month to be analayzed for:'january','february','march','april','may','june' ,or type all if no month\n").lower().strip()
+        month=input("\nchoose month to be analayzed for:'january','february','march','april','may','june' ,or type all if no month\n").lower().strip()
         if month not in['january', 'february', 'march', 'april', 'may', 'june','all']:
            print("please enter the right month correctly ,chick then try again")
            continue
@@ -42,7 +42,7 @@ def get_filters():
             # getting user input for day of week (all, monday, tuesday, ... sunday)
             #Using a while loop to handeling invalid inputs.and multiple if else  
     while True:
-           day=input("choose Day to be Analysed:Sunday,Monday,Tuesday...,7 or type all if no day , \n").title().strip()
+           day=input("\nchoose Day to be Analysed:Sunday,Monday,Tuesday...,7 or type all if no day , \n").title().strip()
            #making sure the user enters the "day correctly"
            if day not in['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday','All']:
               print("please enter the right day correctly ,chick then try again")
@@ -197,7 +197,7 @@ def user_stats(df):
     #using the try & except  taking into consideration of data missing in (Washington) the Gender and Birth Year columns         
    
     try:
-       print("Count of Genders")
+       print("\nCount of Genders")
        gender_count = df['Gender'].value_counts()
        print(gender_count)
  
@@ -207,7 +207,7 @@ def user_stats(df):
        # display the earliest, most recent, and most common year of birth
   
 
-       print("Birth Year Calculations")
+       print("\nBirth Year Calculations")
        print(f"earliest bearth year: {df ['Birth Year'].max()}")
        print(f"most recent bearth year: {df['Birth Year'].min()}") 
        print(f"common bearth year: {df['Birth Year'].mode()}")  
@@ -239,7 +239,7 @@ def main():
      
         #asking & getting the user input for printing 5 raws of raw data
         while True:
-          rawi=input("would you like to print some raw data? type yes or no ")
+          rawi=input("\nwould you like to print some raw data? type yes or no.\n")
      
           if rawi=='yes':
              rawd= df.head(5)
